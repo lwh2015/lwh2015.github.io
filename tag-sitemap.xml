@@ -9,13 +9,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/tags/Sentry/</loc>
-        <lastmod>2020-06-14T11:59:14.346Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/tags/Vue/</loc>
         <lastmod>2020-06-14T11:59:14.351Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -23,8 +16,15 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE-Sentry/</loc>
-        <lastmod>2020-06-14T12:55:39.837Z</lastmod>
+        <loc>http://www.huweihuang.com/tags/Sentry/</loc>
+        <lastmod>2020-06-14T12:58:17.091Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/</loc>
+        <lastmod>2020-06-14T12:58:17.091Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
