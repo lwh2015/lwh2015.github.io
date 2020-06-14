@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="good good study,day day up!">
+    <meta name="keyword"  content="恒无际涯 | Blog">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          1-7.信息系统安全技术 - 恒无际涯 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://www.huweihuang.com/article/1-7-信息系统安全技术/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../css/beantech.min.css">
+
+    <link rel="stylesheet" href="../../css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../css/widget.css">
+
+    <link rel="stylesheet" href="../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../css/signature.css">
+
+    <link rel="stylesheet" href="../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/signature5cdcd3e2b3d8e.gif');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+                            
+                        </div>
+                        <h1>1-7.信息系统安全技术</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 恒无际涯 on
+                            2019-05-24
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">恒无际涯</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="信息安全的有关概念">信息安全的有关概念</h2>
+<h3 id="安全划分为四个层次">安全划分为四个层次</h3>
+<ul>
+<li>设备安全（稳定性、可靠性、可用性）</li>
+<li>数据安全（秘密性、完整性、可用性）
+<ul>
+<li>秘密性（Confidentiality）信息不被未授权者知晓的属性。</li>
+<li>完整性（Integrity）信息是正确的、真实的、未被篡改的。</li>
+<li>可用性（Availability）信息可以随时正常使用的属性。</li>
+</ul>
+</li>
+<li>内容安全</li>
+<li>行为安全（秘密性、完整性、可控性）</li>
+</ul>
+<h3 id="信息安全等级保护管理方法安全保护等级分级">《信息安全等级保护管理方法》安全保护等级分级</h3>
+<ol>
+<li>系统受到破坏后，会对公民、法人和其他组织造成损害，但不会损害国家安全、社会秩序和公共利益。</li>
+<li>系统受到破坏后，会对公民、法人和其他组织造成严重损害，或对社会秩序和公共利益造成损害，但不会损害国家安全。</li>
+<li>系统受到破坏后，对社会秩序和公共利益造成严重损害，或者对国家安全造成损害。</li>
+<li>系统受到破坏后，对社会次序和公共利益造成严重损害，或者对国家安全造成严重损害。</li>
+<li>系统受到破坏后，对国家安全造成特别严重损害。</li>
+</ol>
+<h3 id="安全保护能力的五个等级gb-17859-1999">安全保护能力的五个等级（GB 17859-1999）</h3>
+<ol>
+<li>用户自主保护级</li>
+<li>系统审计保护级</li>
+<li>安全标记保护级</li>
+<li>结构化保护级</li>
+<li>访问验证保护级</li>
+</ol>
+<h3 id="人员管理">人员管理</h3>
+<ul>
+<li>加强人员审查</li>
+<li>进行安全教育</li>
+</ul>
+<h2 id="信息加密-解密与常用算法">信息加密、解密与常用算法</h2>
+<h3 id="信息加密概念">信息加密概念</h3>
+<ul>
+<li>
+<p>明文</p>
+</li>
+<li>
+<p>密文</p>
+</li>
+<li>
+<p>加密（Encryption）</p>
+</li>
+<li>
+<p>解密（DecryPtion）</p>
+</li>
+<li>
+<p>加密算法</p>
+<ul>
+<li>对称加密</li>
+</ul>
+<p>文件加密和解密使用相同的密钥。<br>
+优点：密钥短、破译难（相对）<br>
+缺点：密钥的管理与分配<br>
+AES算法</p>
+<ul>
+<li>非对称加密</li>
+</ul>
+<p>加密密钥和解密密钥<br>
+加密密钥在计算上不能推出解密密钥<br>
+优点：安全性高<br>
+缺点：加密与解密速度慢<br>
+RSA算法</p>
+</li>
+</ul>
+<h4 id="hash函数的概念">Hash函数的概念</h4>
+<p>提供保密性、数字签名  MD5</p>
+<h4 id="数字签名的概念">数字签名的概念</h4>
+<ul>
+<li>签名者事后不能抵赖自己的签名。</li>
+<li>任何其他人不能伪造签名。</li>
+<li>如果当事人的双方关于签名的真伪发生争执，能够在公正的仲裁者面前通过验证签名确认其真伪。</li>
+<li>RAS密码可以同时实现数字签名和数据加密。</li>
+</ul>
+<h4 id="认证authentication">认证（Authentication）</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">认证又称鉴别、确认，是证实某事是否名副其实或是否有效的一个过程。</span><br><span class="line">认证系统常用的参数有口令、标识符、指纹等。</span><br></pre></td></tr></table></figure>
+<h5 id="认证与加密的区别">认证与加密的区别</h5>
+<p>加密用以确保数据的保密性，阻止对手的被动攻击（截取、窃听等）。</p>
+<p>认证用以确保报文发送者和接受者的真实性以及报文的完整性，阻止对手的主动攻击（冒充、篡改、重播）</p>
+<h5 id="认证和数字签名">认证和数字签名</h5>
+<p>认证和数字签名技术都是确保数据真实性的措施，但两者有着明显的区别。</p>
+<ol>
+<li>认证总是基于某种收发双方共享的保密数据来认证被鉴别对象的真实性，而数字签名中用于验证签名的数据是公开的。</li>
+<li>认证允许收发双方互相验证其真实性，不准许第三者验证，而数字签名允许收发双方和第三者都能验证。</li>
+<li>数字签名具有发送方不能抵赖、接收方不能伪造和具有在公证人前解决纠纷的能力，而认证则不一定具备。</li>
+</ol>
+<ul>
+<li>解密算法</li>
+</ul>
+<h2 id="信息系统安全">信息系统安全</h2>
+<p>信息系统一般由计算机系统、网络系统、操作系统、数据库系统和应用系统组成，信息系统的安全也包括这几个方面：</p>
+<ol>
+<li>计算机设备安全
+<ul>
+<li>物理安全保护计算机网络设备、设施以及其他媒体免遭地震、水灾、火灾等环境。</li>
+<li>设备安全设备的防盗和防毁，防止电磁信息泄露，线路截获、抗电磁干扰等保护。</li>
+<li>存储介质安全介质本身和介质上存储的数据的安全。</li>
+<li>可靠性技术通常采用容错系统实现。依靠冗余设计来实现。</li>
+</ul>
+</li>
+<li>网络安全
+<ul>
+<li>常见网络威胁
+<ol>
+<li>网络监听</li>
+<li>口令攻击</li>
+<li>拒绝服务攻击（Dos）</li>
+<li>漏洞攻击</li>
+<li>僵尸网络（Botnet）</li>
+<li>网络钓鱼（Phishing）</li>
+<li>网络欺骗</li>
+<li>网络安全威胁</li>
+</ol>
+</li>
+<li>网络安全防御技术
+<ol>
+<li>防火墙</li>
+<li>入侵检测与防护</li>
+<li>VPN</li>
+<li>安全扫描</li>
+<li>网络蜜罐技术</li>
+</ol>
+</li>
+<li>无线网络安全技术
+<ol>
+<li>WPKI</li>
+<li>WEP</li>
+<li>WPA/WPA2</li>
+<li>WAPI</li>
+<li>802.11i</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>操作系统安全</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">操作系统安全是指操作系统无错误配置、无漏洞、无后门、无特洛伊木马等，能防止非法用户对计算机资源对非法存取。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>按行为划分</p>
+<ol>
+<li>切断，对可用性对威胁</li>
+<li>截取，对机密性对威胁</li>
+<li>篡改，对完整性对攻击</li>
+<li>伪造，对合法性对威胁</li>
+</ol>
+</li>
+<li>
+<p>按表现形式</p>
+<ol>
+<li>计算机病毒</li>
+<li>逻辑炸弹</li>
+<li>特洛伊木马</li>
+<li>后门</li>
+<li>隐蔽通道</li>
+</ol>
+</li>
+<li>
+<p>操作系统安全性几方面</p>
+<ol>
+<li>身份认证机制</li>
+<li>访问控制机制</li>
+<li>数据保密性</li>
+<li>数据完整性</li>
+<li>系统可用性</li>
+<li>审计</li>
+</ol>
+</li>
+</ul>
+<ol start="4">
+<li>数据库系统安全
+<ul>
+<li>数据库安全涉及对问题
+<ol>
+<li>物理数据库对完整性</li>
+<li>逻辑数据库对完整性</li>
+<li>元素安全性</li>
+<li>可审计性</li>
+<li>访问控制</li>
+<li>身份认证</li>
+<li>可用性</li>
+<li>推理控制</li>
+<li>多级保护</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>应用系统安全</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">应用系统安全是以计算机设备安全、网络安全和数据库安全为基础对。同时，采取有效对防病毒、防篡改和版本检查审计，确保应用系统自身执行程序和配置文件的合法性、完整性是极其重要的安全保证措施。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Web威胁防护技术
+<ol>
+<li>Web访问控制技术</li>
+<li>单点登陆（SSO）</li>
+<li>网页防篡改技术</li>
+<li>Web内容安全</li>
+</ol>
+</li>
+</ul>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/1-8信息化发展与应用、服务管理、系统规划、CIO/" data-toggle="tooltip" data-placement="top" title="1-8信息化发展与应用、服务管理、系统规划、CIO">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/1-6-新一代信息系统/" data-toggle="tooltip" data-placement="top" title="1-6.新一代信息系统">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2423410161"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#信息安全的有关概念"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x4FE1;&#x606F;&#x5B89;&#x5168;&#x7684;&#x6709;&#x5173;&#x6982;&#x5FF5;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安全划分为四个层次"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">&#x5B89;&#x5168;&#x5212;&#x5206;&#x4E3A;&#x56DB;&#x4E2A;&#x5C42;&#x6B21;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#信息安全等级保护管理方法安全保护等级分级"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x300A;&#x4FE1;&#x606F;&#x5B89;&#x5168;&#x7B49;&#x7EA7;&#x4FDD;&#x62A4;&#x7BA1;&#x7406;&#x65B9;&#x6CD5;&#x300B;&#x5B89;&#x5168;&#x4FDD;&#x62A4;&#x7B49;&#x7EA7;&#x5206;&#x7EA7;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安全保护能力的五个等级gb-17859-1999"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">&#x5B89;&#x5168;&#x4FDD;&#x62A4;&#x80FD;&#x529B;&#x7684;&#x4E94;&#x4E2A;&#x7B49;&#x7EA7;&#xFF08;GB 17859-1999&#xFF09;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#人员管理"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">&#x4EBA;&#x5458;&#x7BA1;&#x7406;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#信息加密-解密与常用算法"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x4FE1;&#x606F;&#x52A0;&#x5BC6;&#x3001;&#x89E3;&#x5BC6;&#x4E0E;&#x5E38;&#x7528;&#x7B97;&#x6CD5;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#信息加密概念"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">&#x4FE1;&#x606F;&#x52A0;&#x5BC6;&#x6982;&#x5FF5;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#hash函数的概念"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">Hash&#x51FD;&#x6570;&#x7684;&#x6982;&#x5FF5;</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#数字签名的概念"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">&#x6570;&#x5B57;&#x7B7E;&#x540D;&#x7684;&#x6982;&#x5FF5;</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#认证authentication"><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">&#x8BA4;&#x8BC1;&#xFF08;Authentication&#xFF09;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#认证与加密的区别"><span class="toc-nav-number">2.1.3.1.</span> <span class="toc-nav-text">&#x8BA4;&#x8BC1;&#x4E0E;&#x52A0;&#x5BC6;&#x7684;&#x533A;&#x522B;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#认证和数字签名"><span class="toc-nav-number">2.1.3.2.</span> <span class="toc-nav-text">&#x8BA4;&#x8BC1;&#x548C;&#x6570;&#x5B57;&#x7B7E;&#x540D;</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#信息系统安全"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x4FE1;&#x606F;&#x7CFB;&#x7EDF;&#x5B89;&#x5168;</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hwjy";
+    var disqus_identifier = "http://www.huweihuang.com/article/1-7-信息系统安全技术/";
+    var disqus_url = "http://www.huweihuang.com/article/1-7-信息系统安全技术/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/lwh2015">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 恒无际涯 2020 
+                    <br>
+                    Theme by <a href="http://beantech.org">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://www.huweihuang.com">胡伟煌</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

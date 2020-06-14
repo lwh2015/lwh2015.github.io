@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="good good study,day day up!">
+    <meta name="keyword"  content="恒无际涯 | Blog">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          1-5.软件架构设计及其他内容 - 恒无际涯 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://www.huweihuang.com/article/1-5-软件架构设计及其他内容/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../css/beantech.min.css">
+
+    <link rel="stylesheet" href="../../css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../css/widget.css">
+
+    <link rel="stylesheet" href="../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../css/signature.css">
+
+    <link rel="stylesheet" href="../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/signature5cdcd3e2b3d8e.gif');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+                            
+                        </div>
+                        <h1>1-5.软件架构设计及其他内容</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 恒无际涯 on
+                            2019-05-24
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">恒无际涯</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="软件架构设计">软件架构设计</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">软件架构设计的一个核心问题是能否达到架构级的软件复用，能否在不同的系统中，使用同一个软件架构。</span><br><span class="line"></span><br><span class="line">解决好软件的复用、质量和维护问题，是研究软件架构的根本目的。</span><br><span class="line"></span><br><span class="line">软件复用有利于节省工期、减少成本、保持质量。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>软件架构风格
+<ol>
+<li>数据流风格</li>
+<li>调用/返回风格</li>
+<li>独立构件风格</li>
+<li>虚拟机风格</li>
+<li>仓库风格</li>
+</ol>
+</li>
+<li>软件架构评估（敏感点 权衡点）
+<ol>
+<li>基于调查问卷的方式</li>
+<li>基于场景的方式</li>
+<li>基于度量的方式</li>
+</ol>
+</li>
+</ul>
+<h2 id="软件设计">软件设计</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">软件设计是需求分析的延伸与拓展。</span><br><span class="line"></span><br><span class="line">需求分析解决“做什么”的问题，软件设计解决“怎么做”的问题。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>结构化设计（SD）
+<ul>
+<li>自顶向下、逐步求精</li>
+<li>模块化、相对独立</li>
+<li>高内聚、低耦合</li>
+</ul>
+</li>
+<li>面对对象设计（OOD）
+<ul>
+<li>抽象、封装和可扩展</li>
+<li>遵循OOD设计原则</li>
+</ul>
+</li>
+<li>设计模式
+<ul>
+<li>包含模式名称、问题、目的、解决方案、效果、实例代码等。（单例模式，工厂模式、代理模式）</li>
+</ul>
+</li>
+</ul>
+<h2 id="软件工程的过程管理">软件工程的过程管理</h2>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CMMI（Capability Maturity Model Integration）是指能力成熟度模型集成。</span><br><span class="line"></span><br><span class="line">CMMI是一种为组织有效性提供基本要素的过程改进方法，它的目的是帮助软件企业对软件工程过程进行管理和改进，增强开发与改进能力从而能按时、不超预算对开发出高质量对软件。</span><br><span class="line"></span><br><span class="line">CMMI过程域可以分为<span class="number">4</span>类，包括项目管理、过程管理、工程和支持<span class="number">4</span>个类别。</span><br><span class="line"></span><br><span class="line">CMMI有阶段式和连续式这两种表示方式。</span><br><span class="line"><span class="number">1</span>、使用连续式表示法使你能达成“能力等级”。连续式表示用于单个过程域。</span><br><span class="line"><span class="number">2</span>、使用阶段式表示法使你能达到“成熟度级别”。阶段式表示法用于模型整体。</span><br></pre></td></tr></table></figure>
+<h2 id="软件测试及管理">软件测试及管理</h2>
+<ul>
+<li>测试方法
+<ul>
+<li>静态测试采用人工检测和计算机辅助静态分析的手段对程序进行检测。</li>
+<li>动态测试（白盒测试和黑盒测试）</li>
+</ul>
+</li>
+<li>测试类型
+<ul>
+<li>单元测试（模块测试）</li>
+<li>集成测试，也叫组装测试或联合测试。在单元测试的基础上，将所有模块按照设计要求（如根据结构图）组装成为子系统或系统，进行集成测试。</li>
+<li>确认测试</li>
+<li>系统测试</li>
+<li>回归测试是指修改了旧代码后，重新进行测试以确认修改没有引入新的错误或导致其他代码产生错误。</li>
+<li>验收测试</li>
+</ul>
+</li>
+<li>面对对象的测试
+<ul>
+<li>封装性，信息隐蔽对测试的影响</li>
+<li>继承性，继承对充分性的的影响</li>
+<li>多态性，动态绑定对测试充分性影响</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">多态性是指多种形式，不同对对象可以以不同对形式响应同样对消息。专职雇员类对对象和兼职雇员类的对象对于同样的消息采用类不同的计算方法，这是面向对象多态性的体现。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>软件调试和测试的区别</p>
+<ol>
+<li>测试的目的是找出错误，调试的目的是定位错误并修正错误。</li>
+<li>调试是测试之后的活动，测试和调试在目标、方法和思路上都有所不同。</li>
+<li>测试从一个已知的条件开始，使用预先定义的过程，有预知的结果；调试从一个未知的条件开始，结束的过程不可预计。</li>
+<li>测试过程可以事先设计，进度可以事先确定；调试不能描述过程或持续时间。</li>
+</ol>
+</li>
+<li>
+<p>软件测试管理</p>
+<ol>
+<li>过程管理</li>
+<li>配置管理</li>
+<li>评审工作
+<ul>
+<li>测试就绪评审</li>
+<li>测试评审</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">冒烟测试的对象是每一个新编译的需要正式测试的软件版本，目的是确认软件基本功能正常，可以进行后续的正式测试工作。冒烟测试的执行者是版本编译人员。</span><br></pre></td></tr></table></figure>
+<h2 id="软件集成技术">软件集成技术</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">企业应用集成（Enterprise Application Integration,EAI）可以消除信息孤岛，将多个企业信息系统连接起来，实现无缝集成，使之像一个整体一样。</span><br></pre></td></tr></table></figure>
+<ol>
+<li>表示集成
+<ul>
+<li>把原有零散的系统界面集中在一个新的界面中。</li>
+<li>为用户提供一个看上去统一，但是由多个系统组成的应用系统。</li>
+</ul>
+</li>
+<li>数据集成
+<ul>
+<li>通过不同的中间件工具完成数据集成。</li>
+<li>数据集成比表示集成更加灵活，但是当业务逻辑经常发生变化时，数据集成就会面临困难。</li>
+</ul>
+</li>
+<li>控制集成
+<ul>
+<li>在业务逻辑层上对应用系统进行集成。</li>
+<li>借助于远程过程或方法调用、面向消息的中间件、分布式对象技术和事物处理监控器来实现。</li>
+<li>比控制集成和表示集成相比，灵活性更高</li>
+<li>当被集成业务系统没有提供API时，集成难度会增加</li>
+</ul>
+</li>
+<li>业务流程集成
+<ul>
+<li>业务流程集成超越来数据和系统，由一系列基于标准、统一数据格式的工作流完成。</li>
+</ul>
+</li>
+<li>企业之间的应用集成
+<ul>
+<li>EAI技术使用用大多数电子商务企业，完成企业之间的应用集成。目的是实现信息共享，使企业充分利用外部资源。</li>
+</ul>
+</li>
+</ol>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/1-6-新一代信息系统/" data-toggle="tooltip" data-placement="top" title="1-6.新一代信息系统">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/1-4-软件工程中的需求分析/" data-toggle="tooltip" data-placement="top" title="1-4.软件工程中的需求分析">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2423410161"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#软件架构设计"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x8F6F;&#x4EF6;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#软件设计"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x8F6F;&#x4EF6;&#x8BBE;&#x8BA1;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#软件工程的过程管理"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x7684;&#x8FC7;&#x7A0B;&#x7BA1;&#x7406;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#软件测试及管理"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x53CA;&#x7BA1;&#x7406;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#软件集成技术"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">&#x8F6F;&#x4EF6;&#x96C6;&#x6210;&#x6280;&#x672F;</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hwjy";
+    var disqus_identifier = "http://www.huweihuang.com/article/1-5-软件架构设计及其他内容/";
+    var disqus_url = "http://www.huweihuang.com/article/1-5-软件架构设计及其他内容/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/lwh2015">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 恒无际涯 2020 
+                    <br>
+                    Theme by <a href="http://beantech.org">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://www.huweihuang.com">胡伟煌</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

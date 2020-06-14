@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="good good study,day day up!">
+    <meta name="keyword"  content="恒无际涯 | Blog">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Vnode Diff算法 - 恒无际涯 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://www.huweihuang.com/article/vnode-diff算法/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../css/beantech.min.css">
+
+    <link rel="stylesheet" href="../../css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../css/widget.css">
+
+    <link rel="stylesheet" href="../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../css/signature.css">
+
+    <link rel="stylesheet" href="../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/signature5cdcd3e2b3d8e.gif');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
+                            
+                        </div>
+                        <h1>Vnode Diff算法</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 恒无际涯 on
+                            2019-06-10
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">恒无际涯</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>当组件的state发生变化，重新执行渲染函数生成新的vnode，然后将新生成的vnode与老的vnode进行对比，以最小的代价更新原有视图。diff算法的原理是通过移动、新增、删除和替换oldChildrenVnodes对应的结构来生成newChildrenVnodes对应的结构，并且每个老的元素只能被复用一次，老元素最终的位置取决于当前新的vnode。要明确传入diff算法的是两个sameVnode的孩子节点，从两者的开头和结尾位置，同时往中间靠，直到两者中的一个到达中间。</p>
+<p>PS：oldChildrenVnodes表示老的孩子vnode节点集合，newChildrenVnodes表示state变化后生成的新的孩子vnode节点集合</p>
+<p>说这个算法之前，先得明白如何判断两个vnode为sameVnode，我只大体列一下：</p>
+<ol>
+<li>vnode的key值相等，例如<code>&lt;Comps1 key=&quot;key1&quot; /&gt;</code>,<code>&lt;Comps2 key=&quot;key2&quot; /&gt;</code>,key值就不相等，<code>&lt;Comps1 key=&quot;key1&quot; /&gt;</code>,<code>&lt;Comps2 key=&quot;key1&quot; /&gt;</code>,key值就是相等的，<code>&lt;div&gt;&lt;/div&gt;</code>,<code>&lt;p&gt;&lt;/p&gt;</code>,这两个的key值是undefined，key值相等，这个是sameVnode的大前提。</li>
+<li>vnode的tag相同，都是注释或者都不是注释，同时定义或未定义data，标签为input则type必须相同，还有些其他的条件跟我们不太相关就不列出来了。</li>
+</ol>
+<h2 id="整个vnode-diff流程">整个vnode diff流程</h2>
+<p>大前提，要看懂这个vnode diff，务必先明白vnode是啥，如何生成的，vnode于elm的关系，详情请看上面的vnode概念。</p>
+<ol>
+<li>
+<p>如果两个vnode是sameVnode，则进行patch vnode</p>
+</li>
+<li>
+<p>patch vnode过程</p>
+<ol>
+<li>首先vnode的elm指向oldVnode的elm</li>
+<li>使用vnode的数据更新elm的attr，class，style，domProps，events等</li>
+<li>如果vnode是文本节点，则直接设置elm的text，结束</li>
+<li>如果vnode是非文本节点&amp;&amp;有孩子&amp;&amp;oldVnode没有孩子，则elm直接append</li>
+<li>如果vnode是非文本节点&amp;&amp;没有孩子&amp;&amp;oldVnode有孩子，则直接移除elm的孩子节点</li>
+<li>如果非文本节点&amp;&amp;都有孩子节点，则updateChildren，进入diff算法，前面5个步骤排除了不能进行diff情况</li>
+</ol>
+</li>
+<li>
+<p>diff算法，这里以web平台为例<br>
+这里还有强调下，传入diff算法的是两个sameVnode的孩子节点，那么如何用newChildrenVnodes替换oldChildrenVnodes，最简单的方式莫过于，遍历newChildrenVnodes，直接重新生成这个html片段，皆大欢喜。但是这样做会不断的createElement，对性能有影响，于是前辈们就想出了这个diff算法。</p>
+<p>(1). 取两者最左边的节点，判断是否为sameVnode，如果是则进行上述的第二步patch vnode过程，整个流程走完后，此时elm的class，style，events等已经更新了，因为都是孩子的最左边节点，因此位置不变，最左边节点位置向前移动一步。</p>
+<p>(2). 如果不是(1)所述case，取两者最右边的节点，跟(1)的判定流程一样，不过是最右边节点位置向前移动一步。</p>
+<p>(3). 如果不是(1)(2)所述case，取oldChildrenVnodes最左边节点和newChildrenVnodes最右边节点，跟(1)的判定流程一样，不过，elm的位置需要移动到oldVnode最右边elm的右边，因为vnode取的是最右边节点，如果与oldVnode的最右边节点是sameVnode的话，位置是不用改变的，因此newChildrenVnodes的最右边节点和oldChildrenVnodes的最右边节点位置是对应的，但由于不能复用的oldChildrenVnodes的最左边节点，oldChildrenVnodes最右边节点还没有被复用，因此不能替换掉，所以移动到oldChildrenVnodes最右边elm的右边。然后oldChildrenVnodes最左边节点位置向前移动一步，newChildrenVnodes最右边节点位置向前移动一步。</p>
+<p>(4). 如果不是(1)(2)(3)所述case，在oldChildrenVnodes中寻找与newChildrenVnodes最左边节点是sameVnode的oldVnode，如果没有找到，则用这个新的vnode创建一个新的element，插入位置如后所述，如果找到了，则跟(1)的判定流程一样，不过插入的位置是oldChildrenVnodes的最左边节点的左边，因为如果newChildrenVnodes最左边节点与oldChildrenVnodes最左边节点是sameVnode的话，位置是不用变的，并且复用的是oldChildrenVnodes中找到的oldVnode的elm。被复用过的oldVnode后面不会再被取出来。然后newChildrenVnodes最左边节点位置向前移动一步。</p>
+<p>(5). 如果不是(1)(2)(3)(4)所述case，在oldChildrenVnodes中寻找与newChildrenVnodes最左边节点是sameVnode的oldVnode，如果没有找到，则用这个新的vnode创建一个新的elm，插入位置如后所述，如果找到了，则跟(1)的判定流程一样，不过插入的位置是oldChildrenVnodes的最左边节点的左边，因为如果newChildrenVnodes最左边节点与oldChildrenVnodes最左边节点是sameVnode的话，位置是不用变的，并且复用的是oldChildrenVnodes中找到的oldVnode的elm。被复用过oldVnode后面不会再被取出来。然后newChildrenVnodes最左边节点位置向前移动一步。</p>
+<p>(6). 经过上述步骤，oldChildrenVnodes或者newChildrenVnodes的最左边节点与最右边节点重合，退出循环。</p>
+<p>(7). 如果是oldChildrenVnodes的最左边节点与最右边节点先重合，说明newChildrenVnodes还有节点没有被插入，递归创建这些节点对应元素，然后插入到oldChildrenVnodes的最左边节点的右边或者最右边节点的左边，因为是从两者的开始和结束位置向中间靠拢，如果newChildrenVnodes剩余的第一个节点与oldChildrenVnodes的最左边节点为sameVnode的话，位置是不用变的</p>
+<p>(8)如果是newChildrenVnodes的最左边节点与最右边节点先重合，说明oldCHildrenVnodes中有一段结构没有被复用，开始和结束位置向中间靠拢，因此没有被复用的位置是oldChildrenVnodes的最左边和最右边之间节点，删除节点对应的elm即可。</p>
+</li>
+</ol>
+<h2 id="vue的双向数据绑定原理是什么">Vue的双向数据绑定原理是什么</h2>
+<p>vue.js是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。具体实现步骤：</p>
+<ol>
+<li>当把一个普通的JavaScript对象传给Vue实例来作为它的data选项时，Vue将遍历它的属性，用Object.defiineProperty都加上setter和getter这样的话，给这个对象的某个值赋值，就会触发setter，那么就能监听到数据变化。</li>
+<li>compile解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数Update()，添加监听数据的订阅者，一旦数据有变动，便收到通知，更新视图。</li>
+<li>Watcher订阅者是Observer和Compile之间通信的桥梁，主要做的事情是：1、在自身实例化时往属性订阅器(dep)里面添加自己。2、自身必须有一个Update()方法。3、待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调，则功成身退。</li>
+<li>MVVM作为数据绑定的入口，整合Observer、Compile和Watcher三者，通过Observer来监听自己的model数据变化，通过Compole来解析编译模板指令，最终利用Watcher搭起Observer和Compile之间的通信桥梁，达到数据变化-&gt;视图更新；视图交互变化(input)-&gt;数据model变更的双向绑定效果。</li>
+</ol>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）/" data-toggle="tooltip" data-placement="top" title="2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/1-8信息化发展与应用、服务管理、系统规划、CIO/" data-toggle="tooltip" data-placement="top" title="1-8信息化发展与应用、服务管理、系统规划、CIO">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2423410161"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#整个vnode-diff流程"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x6574;&#x4E2A;vnode diff&#x6D41;&#x7A0B;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#vue的双向数据绑定原理是什么"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Vue&#x7684;&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x539F;&#x7406;&#x662F;&#x4EC0;&#x4E48;</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hwjy";
+    var disqus_identifier = "http://www.huweihuang.com/article/vnode-diff算法/";
+    var disqus_url = "http://www.huweihuang.com/article/vnode-diff算法/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/lwh2015">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 恒无际涯 2020 
+                    <br>
+                    Theme by <a href="http://beantech.org">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://www.huweihuang.com">胡伟煌</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="good good study,day day up!">
+    <meta name="keyword"  content="恒无际涯 | Blog">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构） - 恒无际涯 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://www.huweihuang.com/article/2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="../../css/beantech.min.css">
+
+    <link rel="stylesheet" href="../../css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+    <link rel="stylesheet" href="../../css/widget.css">
+
+    <link rel="stylesheet" href="../../css/rocket.css">
+
+    <link rel="stylesheet" href="../../css/signature.css">
+
+    <link rel="stylesheet" href="../../css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/signature5cdcd3e2b3d8e.gif');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+                            
+                        </div>
+                        <h1>2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 恒无际涯 on
+                            2019-07-17
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">恒无际涯</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="项目管理基础">项目管理基础</h1>
+<h2 id="项目的概念-特点">项目的概念、特点</h2>
+<blockquote>
+<p>项目是为创造独特的产品、服务或成果而进行的临时性工作。具有==临时性、独特性、渐进明细、目的性、资源约束==的特点。</p>
+</blockquote>
+<h2 id="项目与日常运作的区别">项目与日常运作的区别</h2>
+<table>
+<thead>
+<tr>
+<th>不同点</th>
+<th>项目</th>
+<th>日常运作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目的</td>
+<td>独特性</td>
+<td>常规的、普遍的</td>
+</tr>
+<tr>
+<td>责任人</td>
+<td>项目经理</td>
+<td>部门经理</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>有限的</td>
+<td>相对无限</td>
+</tr>
+<tr>
+<td>持续性质</td>
+<td>一次性</td>
+<td>重复性</td>
+</tr>
+<tr>
+<td>组织结构</td>
+<td>项目组织</td>
+<td>职能部门</td>
+</tr>
+<tr>
+<td>考核指标</td>
+<td>以目标为导向</td>
+<td>效率和有效性</td>
+</tr>
+<tr>
+<td>资源需求</td>
+<td>多变性</td>
+<td>稳定性</td>
+</tr>
+</tbody>
+</table>
+<h2 id="项目和战略规划">项目和战略规划</h2>
+<blockquote>
+<p>战略管理三个过程</p>
+</blockquote>
+<ol>
+<li>战略制定</li>
+<li>战略实施</li>
+<li>战略评价</li>
+</ol>
+<blockquote>
+<p>从上而下产生：由企业发展战略产生</p>
+</blockquote>
+<blockquote>
+<p>从下而上产生：由跨部门活动及TPM提案产生</p>
+</blockquote>
+<blockquote>
+<p>TPM:Total Productive Maintenance 全面生产维护</p>
+</blockquote>
+<blockquote>
+<p>市场需求、营运（业务）需要、客户要求、技术进步、法律要求</p>
+</blockquote>
+<h2 id="信息系统项目的特点">信息系统项目的特点</h2>
+<ol>
+<li>目标不明确</li>
+<li>需求变化频繁</li>
+<li>智力密集型</li>
+<li>设计队伍庞大，高度专业化</li>
+<li>设计承包商多、分布广、相互联系复杂</li>
+<li>集成项目中需要研制开发大量的软硬件系统</li>
+<li>项目生命周期通常较短</li>
+<li>通常采用大量的新技术</li>
+<li>使用与维护的要求非常复杂</li>
+</ol>
+<h2 id="项目管理的定义">项目管理的定义</h2>
+<blockquote>
+<ul>
+<li>项目管理是把各种知识、技能、手段和技术应用于项目活动中，以达到项目的要求。</li>
+<li>项目管理通过合理应用与整合47个项目管理过程得以实现。这==47==个过程又被归类成==5==个过程组（==启动==、==规划==、==执行==、==监控==、==收尾==）</li>
+</ul>
+</blockquote>
+<ul>
+<li>项目管理是一种管理方法体系</li>
+<li>项目管理的对象、目的</li>
+<li>项目管理的任务、职能</li>
+<li>项目管理运用系统理论与思想</li>
+<li>项目管理职能主要有由项目经理执行</li>
+</ul>
+<h2 id="项目管理的特点">项目管理的特点</h2>
+<blockquote>
+<ol>
+<li>项目管理是一项复杂的工作。</li>
+<li>项目管理具有创造性。</li>
+<li>项目管理需要集权领导和建立专门的项目组织。</li>
+<li>项目经理在项目管理中起着非常重要的作用。</li>
+<li>社会经济、政治、文化、自然环境等对项目的影响。</li>
+</ol>
+</blockquote>
+<p>对一个项目而言，目标往往不是单一的，而是一个多目标系统，项目目标基本可以表现在三个方面：时间、成本、技术性能。项目的目标就是要充分的利用可获得的资源，使得项目在一定时间内，在一定的预算基础上，获得所期望的技术结果。然而，这三个基本目标之间往往存在着一定的冲突。通常是时间的缩短要以成本的提高为代价，而时间及成本投入的不足又会影响技术性能的实现，因此三者之间往往需要进行一定的平衡。</p>
+<h1 id="项目管理知识体系构成">项目管理知识体系构成</h1>
+<h2 id="项目管理知识领域">项目管理知识领域</h2>
+<blockquote>
+<ol>
+<li>项目管理知识体系</li>
+<li>应用领域的知识标准和规定</li>
+<li>项目的环境</li>
+<li>通用的知识管理和技能</li>
+<li>软技能或人际关系技能</li>
+</ol>
+</blockquote>
+<h2 id="管理知识与技能">管理知识与技能</h2>
+<ul>
+<li>硬技能
+<ol>
+<li>财务管理和会计</li>
+<li>购买和采购</li>
+<li>销售和营销</li>
+<li>合同和商业法律</li>
+<li>制造和分配</li>
+<li>后勤和供应链</li>
+<li>战略计划、战术计划和运作计划</li>
+<li>组织结构、组织行为、人事管理、薪资、福利和职业规划</li>
+<li>健康和安全实践</li>
+</ol>
+</li>
+<li>软技能
+<ol>
+<li>有效的沟通：信息交流</li>
+<li>影响一个组织：&quot;让事情办成&quot;的能力</li>
+<li>领导能力：不是简单的服从，它是我们做好每一件事的核心</li>
+<li>激励：激励人员达到高水平的生产率并克服变革的阻力</li>
+<li>谈判和冲突管理：与其他人谈判或达成协议</li>
+<li>问题解决：问题定义和做出决策的结合</li>
+</ol>
+</li>
+</ul>
+<h1 id="ipmppmp">IPMP/PMP</h1>
+<blockquote>
+<p>IPMP有四级、PMP只有一级</p>
+</blockquote>
+<h1 id="prince2">PRINCE2</h1>
+<blockquote>
+<p>PRINCE2提供最佳的项目管理方法论，更加接近项目的实施，更加重视项目的实际收益和回报，旨在以一种适于广泛项目环境的方式组织安排和着重介绍项目管理知识。==包括4个被称为要素的组成部分（原则、主题、流程、以及项目环境）==。</p>
+</blockquote>
+<ul>
+<li>七个原则
+<ol>
+<li>持续业务验证</li>
+<li>吸取经验教训</li>
+<li>明确定义的角色和职责</li>
+<li>按阶段管理</li>
+<li>例外管理</li>
+<li>关注产品</li>
+<li>根据项目环境裁剪</li>
+</ol>
+</li>
+<li>七个主题
+<ol>
+<li>商业论证</li>
+<li>组织</li>
+<li>质量</li>
+<li>计划</li>
+<li>风险</li>
+<li>变更</li>
+<li>进展</li>
+</ol>
+</li>
+<li>七个流程
+<ol>
+<li>项目准备流程</li>
+<li>项目指导流程</li>
+<li>项目启动流程</li>
+<li>项目控制流程</li>
+<li>项目边界管理</li>
+<li>产品交付管理流程</li>
+<li>项目收尾流程</li>
+</ol>
+</li>
+<li>项目环境（大小、复杂性、类型、地理和文化差异）</li>
+</ul>
+<h1 id="组织结构对项目的影响">组织结构对项目的影响</h1>
+<h2 id="组织文化-风格和结构会对项目实施产生影响">组织文化、风格和结构会对项目实施产生影响</h2>
+<blockquote>
+<p>项目在组织内运行，所以==组织文化与风格==会对如何执行项目产生影响。项目管理的成功也高度依赖于有效的==组织结构==。</p>
+</blockquote>
+<ul>
+<li>组织文化与风格
+<ol>
+<li>共同价值观、行为准则、信仰与期望</li>
+<li>组织的方针，办事程序</li>
+<li>组织对职权关系的观点</li>
+<li>职业道德</li>
+<li>其他因素（风险承受力、奖励 制度）</li>
+</ol>
+</li>
+<li>组织结构
+<ol>
+<li>职能型组织</li>
+<li>矩阵型组织
+<ul>
+<li>弱矩阵组织</li>
+<li>平衡矩阵组织</li>
+<li>强矩阵组织</li>
+</ul>
+</li>
+<li>项目型组织</li>
+</ol>
+</li>
+</ul>
+<h2 id="各组织结构优缺点">各组织结构优缺点</h2>
+<table>
+<thead>
+<tr>
+<th>优缺点</th>
+<th>职能型组织</th>
+<th>矩阵型组织</th>
+<th>项目型组织</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优点</td>
+<td>资源利用率相对较高，成员工作稳定连续</td>
+<td>兼有职能型与项目型的优点，比较灵活</td>
+<td>结构单一、职权分明，目标明确单一，项目内沟通简洁、方便，决策快</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>职能型组织管理职能多、目标多样，为项目分配的资源不稳定，项目决策慢</td>
+<td>团队成员可能存在多重领导（项目经理和职能经理）</td>
+<td>管理成本过高，在项目工作量不足时资源配置效率低，项目环境比较封闭，不利于项目间沟通和技术知识分享，员工缺乏事业上的连续性和保障等。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pmo及其职能">PMO及其职能</h2>
+<blockquote>
+<p>PMO（Project Management Office）可以存在于任何组织结构中，包括职能型组织。</p>
+</blockquote>
+<ul>
+<li>==战略性职能==：项目组合管理，提高组织项目管理能力。将组织的既定战略反映到项目。</li>
+<li>==日常性职能==：提供项目管理的指导与咨询，组织内多项目的管理和监控，培养项目管理人员，建立组织内项目管理的支撑环境。</li>
+</ul>
+<h2 id="不同类型的pmo">不同类型的PMO</h2>
+<blockquote>
+<p>项目管理办公室（Project Management Office）帮助从以往完成的工作中吸取经验教训。提供需要的模板以及 指导，确保项目采用了正确方法。</p>
+</blockquote>
+<blockquote>
+<p>支持型</p>
+</blockquote>
+<p>支持型的PMO会提供你需要的所有模板，明确从项目启动阶段直到项目交付和结束的整个过程中，应当如何通过范围，资源，进度和状态来表述项目的进展情况。</p>
+<blockquote>
+<p>指导型</p>
+</blockquote>
+<p>采用指导性方法的PMO会提供项目经理来指导团队。在一个指导型PMO中，项目经理是向PMO汇报的。</p>
+<blockquote>
+<p>控制型</p>
+</blockquote>
+<p>控制型与支持型PMO类似，但他们会定期的地审查你的工作，确保你没有偏离他们的指导。</p>
+<h2 id="pmo在组织结构中的作用">PMO在组织结构中的作用</h2>
+<ol>
+<li>在所有PMO管理的项目之间共享和协调资源</li>
+<li>明确和制定项目管理方法、最佳实践和标准</li>
+<li>负责制订项目方针、流程、模板和其他共享资料</li>
+<li>为所有项目进行集中的配置管理</li>
+<li>对所有项目的集中的共同风险和独特风险存储库加以管理</li>
+<li>项目工具的实施和管理中心</li>
+<li>项目之间的沟通管理协调中心</li>
+<li>对项目经理进行指导的平台</li>
+<li>通常在企业级对所有PMO管理的项目的时间基线和预算进行集中盟控</li>
+<li>在项目经理和任何内部或外部的质量人员或标准化组织之间协调整体项目的质量标准</li>
+</ol>
+<h1 id="信息系统项目的生命周期">信息系统项目的生命周期</h1>
+<blockquote>
+<p>为有 效的进行管理控制，并且与项目实施组织的日常运作联系起来，通常会把一个项目划分成若干个阶段，这些项目阶段合在一起就称为项目生命周期。</p>
+</blockquote>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">启动项目<span class="comment">--&gt;组织与准备</span></span><br><span class="line">组织与准备<span class="comment">--&gt;执行项目工作</span></span><br><span class="line">执行项目工作<span class="comment">--&gt;结束项目</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>==注意不应把通用生命周期与项目管理过程组混淆==</p>
+</blockquote>
+<h2 id="通用项目生命周期结构中典型的成本与人力投入">通用项目生命周期结构中典型的成本与人力投入</h2>
+<blockquote>
+<p>成本与人力投入在项目初始阶段较少，在执行项目工作中上升，在项目快要结束的时候降低。<br>
+风险和不确定性在项目开始的时候较高，但随着项目的持续进行，风险和不确定性就会降低，变更代价随着项目进行而持续上升。</p>
+</blockquote>
+<h1 id="信息系统项目典型生命周期模型">信息系统项目典型生命周期模型</h1>
+<blockquote>
+<ol>
+<li>瀑布模型</li>
+<li>螺旋模型</li>
+<li>迭代模型</li>
+<li>V模型</li>
+<li>原型化模型</li>
+<li>敏捷开发模型</li>
+</ol>
+</blockquote>
+<h2 id="瀑布模型">瀑布模型</h2>
+<blockquote>
+<p>计划、需求分析、设计、编码、测试、运行维护</p>
+</blockquote>
+<h2 id="螺旋模型">螺旋模型</h2>
+<blockquote>
+<p>适用于尤其注重风险分析的项目或者重大项目。</p>
+</blockquote>
+<blockquote>
+<p>四个阶段：制定计划、风险分析、实施工程、客户评估。从里至外交付。</p>
+</blockquote>
+<h2 id="迭代模型">迭代模型</h2>
+<blockquote>
+<p>四个阶段：初始、细化、构造、移交</p>
+</blockquote>
+<h2 id="v模型">V模型</h2>
+<ol>
+<li>验收测试对应需求分析（验需）</li>
+<li>系统测试对应概要设计（膝盖）</li>
+<li>集成测试对应详细设计（吉祥）</li>
+<li>单元测试对应编码（单边）</li>
+</ol>
+<h2 id="原型化模型">原型化模型</h2>
+<blockquote>
+<p>步骤：</p>
+<ol>
+<li>创建一个快速原型</li>
+<li>与干系人进行充分的讨论和分析</li>
+<li>在原型的基础上开发产品</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>特点：实际可行、具有最终系统的基本特征、构造方便、快速、造价低。</p>
+</blockquote>
+<blockquote>
+<p>分类：抛弃式原型、进化型原型。</p>
+</blockquote>
+<h2 id="敏捷开发模型">敏捷开发模型</h2>
+<blockquote>
+<p>强调程序员团队与业务专家之间的紧密协作、面对面的沟通，频繁交付新的软件版本、紧凑而自我组织型的团队。</p>
+</blockquote>
+<blockquote>
+<p>Scrum是一种迭代式增量软件开发过程，通常用于敏捷软件开发。</p>
+</blockquote>
+<h2 id="各个生命周期模型特点">各个生命周期模型特点</h2>
+<table>
+<thead>
+<tr>
+<th>生命周期模型</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>瀑布模型</td>
+<td>开发阶段：计划、需求、设计、编码、测试、运行维护。适用项目：需求明确，变化小的产品；升级项目或以前开发过类似的项目。</td>
+</tr>
+<tr>
+<td>螺旋模型</td>
+<td>开发阶段：制定计划、风险分析、实施工程、客户评估。强调风险分析。适用项目：庞大、复杂、高风险系统。采用循环的方式逐步深入。</td>
+</tr>
+<tr>
+<td>迭代模型</td>
+<td>开发阶段：初始、细化、构造、移交、测试。适用项目：需求不确定，项目之初不能完整定义产品所有需求、计划多期开发的系统。</td>
+</tr>
+<tr>
+<td>V模型</td>
+<td>以测试为中心的开发模型。单元测试对应编码，集成测试对应详细设计，系统测试对应概要设计，验收测试对应需求分析。</td>
+</tr>
+<tr>
+<td>原型化模型</td>
+<td>实际可行、原型具有最终系统的基本特征、构造方面、快速、造价低。</td>
+</tr>
+<tr>
+<td>敏捷开发模型</td>
+<td>敏捷流程的具体实践有XP极限编程和Scrum。适用项目：需求多变、要求快速反馈，及时作出调整。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="单个项目的管理过程">单个项目的管理过程</h1>
+<h2 id="5大过程组-47个子过程">5大过程组 47个子过程</h2>
+<blockquote>
+<ul>
+<li>启动过程组：定义一个新项目或现有项目的一个新阶段，授权开始该项目或阶段的一组过程。</li>
+<li>规划过程组：明确项目范围、定义和细化目标、根据项目目标和范围规划最佳的行动方案。</li>
+<li>执行过程组：整合人员和其他资源，在项目生命期或某个阶段内执行项目管理计划。</li>
+<li>监控过程组：定期测量和监控进展、识别与项目管理计划的偏差，在必要时采取纠正措施，确保项目或阶段目标达成。</li>
+<li>收尾过程组：正式接受产品、服务或工作成果，有序的结束项目或阶段。</li>
+</ul>
+</blockquote>
+<h2 id="十大知识领域五大过程组">十大知识领域五大过程组</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>启动过程组</th>
+<th>规划过程组</th>
+<th>执行过程组</th>
+<th>监控过程组</th>
+<th>收尾过程组</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目整合管理</td>
+<td>制定项目章程</td>
+<td>制定项目管理计划</td>
+<td>指导与管理项目工作</td>
+<td>监控项目工作实施整体变更控制</td>
+<td>结束项目或阶段</td>
+</tr>
+<tr>
+<td>项目范围管理</td>
+<td></td>
+<td>规划范围管理、收集需求、定义范围、创建WBS</td>
+<td></td>
+<td>确认范围、控制范围</td>
+<td></td>
+</tr>
+<tr>
+<td>项目进度管理</td>
+<td></td>
+<td>规划进度管理、定义活动、排列活动顺序、估算活动资源、估算活动持续时间、制定进度计划</td>
+<td></td>
+<td>控制进度</td>
+<td></td>
+</tr>
+<tr>
+<td>项目成本管理</td>
+<td></td>
+<td>规划成本管理、估算成本、制定预算</td>
+<td></td>
+<td>控制成本</td>
+<td></td>
+</tr>
+<tr>
+<td>项目质量管理</td>
+<td></td>
+<td>规划质量管理</td>
+<td>实施质量保证</td>
+<td>控制质量</td>
+<td></td>
+</tr>
+<tr>
+<td>项目人力资源管理</td>
+<td></td>
+<td>规划人力资源管理</td>
+<td>组建项目团队、建设项目团队、管理项目团队</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>项目沟通管理</td>
+<td></td>
+<td>规划沟通管理</td>
+<td>管理沟通</td>
+<td>控制沟通</td>
+<td></td>
+</tr>
+<tr>
+<td>项目风险管理</td>
+<td></td>
+<td>规划风险管理、识别风险、实施定性风险分析、实施定量风险分析、规划风险应对</td>
+<td></td>
+<td>控制风险</td>
+<td></td>
+</tr>
+<tr>
+<td>项目采购管理</td>
+<td></td>
+<td>规划采购管理</td>
+<td>实施采购</td>
+<td>控制采购</td>
+<td>结束采购</td>
+</tr>
+<tr>
+<td>项目干系人管理</td>
+<td>识别干系人</td>
+<td>规划干系人管理</td>
+<td>管理干系人参与</td>
+<td>控制干系人参与</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/记一次前端错误监控Sentry平台实践/" data-toggle="tooltip" data-placement="top" title="记一次前端错误监控Sentry平台实践">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/vnode-diff算法/" data-toggle="tooltip" data-placement="top" title="Vnode Diff算法">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2423410161"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#项目管理基础"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x57FA;&#x7840;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目的概念-特点"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">&#x9879;&#x76EE;&#x7684;&#x6982;&#x5FF5;&#x3001;&#x7279;&#x70B9;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目与日常运作的区别"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x9879;&#x76EE;&#x4E0E;&#x65E5;&#x5E38;&#x8FD0;&#x4F5C;&#x7684;&#x533A;&#x522B;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目和战略规划"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">&#x9879;&#x76EE;&#x548C;&#x6218;&#x7565;&#x89C4;&#x5212;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#信息系统项目的特点"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">&#x4FE1;&#x606F;&#x7CFB;&#x7EDF;&#x9879;&#x76EE;&#x7684;&#x7279;&#x70B9;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目管理的定义"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x7684;&#x5B9A;&#x4E49;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目管理的特点"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x7684;&#x7279;&#x70B9;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#项目管理知识体系构成"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x77E5;&#x8BC6;&#x4F53;&#x7CFB;&#x6784;&#x6210;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目管理知识领域"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x77E5;&#x8BC6;&#x9886;&#x57DF;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#管理知识与技能"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">&#x7BA1;&#x7406;&#x77E5;&#x8BC6;&#x4E0E;&#x6280;&#x80FD;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#ipmppmp"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">IPMP/PMP</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#prince2"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">PRINCE2</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#组织结构对项目的影响"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">&#x7EC4;&#x7EC7;&#x7ED3;&#x6784;&#x5BF9;&#x9879;&#x76EE;&#x7684;&#x5F71;&#x54CD;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#组织文化-风格和结构会对项目实施产生影响"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">&#x7EC4;&#x7EC7;&#x6587;&#x5316;&#x3001;&#x98CE;&#x683C;&#x548C;&#x7ED3;&#x6784;&#x4F1A;&#x5BF9;&#x9879;&#x76EE;&#x5B9E;&#x65BD;&#x4EA7;&#x751F;&#x5F71;&#x54CD;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#各组织结构优缺点"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">&#x5404;&#x7EC4;&#x7EC7;&#x7ED3;&#x6784;&#x4F18;&#x7F3A;&#x70B9;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#pmo及其职能"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">PMO&#x53CA;&#x5176;&#x804C;&#x80FD;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#不同类型的pmo"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;PMO</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#pmo在组织结构中的作用"><span class="toc-nav-number">5.5.</span> <span class="toc-nav-text">PMO&#x5728;&#x7EC4;&#x7EC7;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x4F5C;&#x7528;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#信息系统项目的生命周期"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">&#x4FE1;&#x606F;&#x7CFB;&#x7EDF;&#x9879;&#x76EE;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#通用项目生命周期结构中典型的成本与人力投入"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">&#x901A;&#x7528;&#x9879;&#x76EE;&#x751F;&#x547D;&#x5468;&#x671F;&#x7ED3;&#x6784;&#x4E2D;&#x5178;&#x578B;&#x7684;&#x6210;&#x672C;&#x4E0E;&#x4EBA;&#x529B;&#x6295;&#x5165;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#信息系统项目典型生命周期模型"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">&#x4FE1;&#x606F;&#x7CFB;&#x7EDF;&#x9879;&#x76EE;&#x5178;&#x578B;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x578B;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#瀑布模型"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">&#x7011;&#x5E03;&#x6A21;&#x578B;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#螺旋模型"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">&#x87BA;&#x65CB;&#x6A21;&#x578B;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#迭代模型"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">&#x8FED;&#x4EE3;&#x6A21;&#x578B;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#v模型"><span class="toc-nav-number">7.4.</span> <span class="toc-nav-text">V&#x6A21;&#x578B;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#原型化模型"><span class="toc-nav-number">7.5.</span> <span class="toc-nav-text">&#x539F;&#x578B;&#x5316;&#x6A21;&#x578B;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#敏捷开发模型"><span class="toc-nav-number">7.6.</span> <span class="toc-nav-text">&#x654F;&#x6377;&#x5F00;&#x53D1;&#x6A21;&#x578B;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#各个生命周期模型特点"><span class="toc-nav-number">7.7.</span> <span class="toc-nav-text">&#x5404;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x578B;&#x7279;&#x70B9;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#单个项目的管理过程"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">&#x5355;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x7BA1;&#x7406;&#x8FC7;&#x7A0B;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5大过程组-47个子过程"><span class="toc-nav-number">8.1.</span> <span class="toc-nav-text">5&#x5927;&#x8FC7;&#x7A0B;&#x7EC4; 47&#x4E2A;&#x5B50;&#x8FC7;&#x7A0B;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#十大知识领域五大过程组"><span class="toc-nav-number">8.2.</span> <span class="toc-nav-text">&#x5341;&#x5927;&#x77E5;&#x8BC6;&#x9886;&#x57DF;&#x4E94;&#x5927;&#x8FC7;&#x7A0B;&#x7EC4;</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hwjy";
+    var disqus_identifier = "http://www.huweihuang.com/article/2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）/";
+    var disqus_url = "http://www.huweihuang.com/article/2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/lwh2015">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 恒无际涯 2020 
+                    <br>
+                    Theme by <a href="http://beantech.org">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://www.huweihuang.com">胡伟煌</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../../js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

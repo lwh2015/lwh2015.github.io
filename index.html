@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="good good study,day day up!">
+    <meta name="keyword"  content="恒无际涯 | Blog">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          恒无际涯 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://www.huweihuang.com/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="css/beantech.min.css">
+
+    <link rel="stylesheet" href="css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="css/highlight.css">
+
+    <link rel="stylesheet" href="css/widget.css">
+
+    <link rel="stylesheet" href="css/rocket.css">
+
+    <link rel="stylesheet" href="css/signature.css">
+
+    <link rel="stylesheet" href="css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/header_img/home3.jpg') 
+            /*config*/
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/signature5cdcd3e2b3d8e.gif');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="site-heading">
+                        <h1>恒无际涯</h1>
+                        <!--<hr class="small">-->
+                        <span class="subheading">个人博客</span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">恒无际涯</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+            
+                <!-- Main Content -->
+
+
+<div class="post-preview">
+
+    <a href="/article/记一次前端错误监控Sentry平台实践/">
+        <h2 class="post-title">
+            记一次前端错误监控Sentry平台实践
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前言
+作为一名前端，不知道大家是否有遇到过如下的情况：
+
+客户or测试：为什么我这个页面不显示数据啊？？？
+我 ：（立马打开网站），我这边显示是正常的啊，你是不是操作有问题啊？
+客户or测试：没有啊，我就是正常的查询操作啊，没干其他的，怎么就看不到数据啊？
+我：（语无伦次），可是我这边是显示正常的啊，控制台也没有报错啊！
+客户or测试：BALABALA
+
+相信各位小伙伴会经常遇到这样子的问题......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2020-06-14
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#前端基础建设" title="前端基础建设">前端基础建设</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）/">
+        <h2 class="post-title">
+            2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            项目管理基础
+项目的概念、特点
+
+项目是为创造独特的产品、服务或成果而进行的临时性工作。具有==临时性、独特性、渐进明细、目的性、资源约束==的特点。
+
+项目与日常运作的区别
+
+
+
+不同点
+项目
+日常运作
+
+
+
+
+目的
+独特性
+常规的、普遍的
+
+
+责任人
+项目经理
+部门经理
+
+
+持续时间
+有限的
+相对无限
+
+
+持续性质
+一次性
+重复性
+
+
+组织结构
+项目组织
+职能部门
+
+
+考核指标
+以目标为......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2019-07-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/vnode-diff算法/">
+        <h2 class="post-title">
+            Vnode Diff算法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            当组件的state发生变化，重新执行渲染函数生成新的vnode，然后将新生成的vnode与老的vnode进行对比，以最小的代价更新原有视图。diff算法的原理是通过移动、新增、删除和替换oldChildrenVnodes对应的结构来生成newChildrenVnodes对应的结构，并且每个老的元素只能被复用一次，老元素最终的位置取决于当前新的vnode。要明确传入diff算法的是两个same......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2019-06-10
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Vue" title="Vue">Vue</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/1-8信息化发展与应用、服务管理、系统规划、CIO/">
+        <h2 class="post-title">
+            1-8信息化发展与应用、服务管理、系统规划、CIO
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            信息化发展与应用
+信息化发展与应用的新特点
+培育人工智能、移动智能终端、第五代移动通信、先进传感器
+发展趋势和新技术应用
+
+高速度大容量
+集成化和平台化
+智能化
+虚拟计算
+通信技术
+遥感和传感技术
+移动智能终端
+以人为本
+信息安全
+
+123国家信息化发展战略2006-2020年期间，我国信息化发展的战略目标是：综合信息基础设施基本普及，信息技术自主创新能力显著增强，信息产业结构全面优化，国家......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2019-06-10
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/1-7-信息系统安全技术/">
+        <h2 class="post-title">
+            1-7.信息系统安全技术
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            信息安全的有关概念
+安全划分为四个层次
+
+设备安全（稳定性、可靠性、可用性）
+数据安全（秘密性、完整性、可用性）
+
+秘密性（Confidentiality）信息不被未授权者知晓的属性。
+完整性（Integrity）信息是正确的、真实的、未被篡改的。
+可用性（Availability）信息可以随时正常使用的属性。
+
+
+内容安全
+行为安全（秘密性、完整性、可控性）
+
+《信息安全等级保护管理方法》......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2019-05-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/1-6-新一代信息系统/">
+        <h2 class="post-title">
+            1-6.新一代信息系统
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            物联网（The Internet of Things）
+1通过信息传感设备，通过约定协议，将任何物品与互联网相连接，进行信息交换和通信，以实现智能化识别、定位、跟踪、监控和管理的一种网络。
+
+物品与物品（Thing to Thing，T2T）
+人与物品（Human to Thing，H2T）
+人与人（Human to Human，H2H）
+
+1关键技术：传感器技术、RFID标签、嵌入式系统技......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2019-05-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/1-5-软件架构设计及其他内容/">
+        <h2 class="post-title">
+            1-5.软件架构设计及其他内容
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            软件架构设计
+12345软件架构设计的一个核心问题是能否达到架构级的软件复用，能否在不同的系统中，使用同一个软件架构。解决好软件的复用、质量和维护问题，是研究软件架构的根本目的。软件复用有利于节省工期、减少成本、保持质量。
+
+软件架构风格
+
+数据流风格
+调用/返回风格
+独立构件风格
+虚拟机风格
+仓库风格
+
+
+软件架构评估（敏感点 权衡点）
+
+基于调查问卷的方式
+基于场景的方式
+基于度量的方式......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2019-05-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/1-4-软件工程中的需求分析/">
+        <h2 class="post-title">
+            1-4.软件工程中的需求分析
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            软件工程
+1定义：将系统的、规范的、可度量的工程化方法应用于软件开发、运行和维护的全过程及上述方法的研究。
+1. 需求分析
+
+需求的层次
+
+业务需求对系统高层次的目标要求，来自项目投资人、客户、市销人员或产品策划部门。
+用户需求最终用户的具体目标，需要系统必须可以完成的任务。
+系统需求从系统的角度来说明软件的需求，包括功能需求、非功能需求和设计约束
+
+
+质量功能部署（Quality Func......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2019-05-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/1-3-常规信息系统集成技术/">
+        <h2 class="post-title">
+            1-3.常规信息系统集成技术
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            常规信息系统集成技术
+系统集成是将计算机软件、硬件、网络通信等技术和产品集成为能够满足用户特定需求等信息系统。包括总体策划、设计开发、实施、服务及保障。
+
+1. 网络标准与网络协议
+网络协议:为计算机网络中进行数据交换而建立的规则、标准或约定的集合。网络协议由三个要素组成：
+
+语义（表示要做什么）
+语法（表示要怎么做）
+时序（表示做的顺序）
+
+ISO（国际标准化组织）、OSI（开放系统互联参......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2019-05-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/1-2-信息系统开发方法/">
+        <h2 class="post-title">
+            1-2.信息系统开发方法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 结构化方法（生命周期法）
+
+精髓：自顶向下，逐步求精和模块设计
+
+
+结构化分析（SA）
+结构化设计（SD）
+结构化程序设计（SP）
+
+
+特点
+
+
+开发目标清晰化
+开发工作阶段化
+开发文档规范化
+设计方法结构化
+
+
+局限性
+
+
+开发周期长
+难以适应需求变化
+很少考虑数据结构
+用户需求必须清楚
+
+适合于数据处理领域的问题，但不适应于规模较大、比较复杂但系统开发。
+2. 面向对象方法（OO方......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 恒无际涯 on
+            2019-05-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#信息系统项目管理师" title="信息系统项目管理师">信息系统项目管理师</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+        <li class="next">
+            <a href="/archives/2/">Older Posts &rarr;</a>
+        </li>
+    
+</ul>
+
+
+
+                <br>
+
+                <!-- require APlayer -->
+                
+
+                <!-- 如果开启评论功能 -->
+                
+            </div>
+
+          <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Featured Tags -->
+
+<section>
+    <!-- no hr -->
+    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+            
+            <a href="/tags/#信息系统项目管理师" title="信息系统项目管理师" rel="9">信息系统项目管理师</a>
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+</section>
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+    <h5><a href="/about/">ABOUT ME</a></h5>
+    <div class="short-about">
+
+        
+            <img id = "avatar_pic" src="/img/avatar/avatar.jpg" />
+        
+
+        
+            <p>Nothing seek, nothing find.</p>
+        
+
+        <!-- SNS Link -->
+        <ul class="list-inline">
+            
+            
+            
+
+            
+
+            
+
+            
+                <li>
+                    <a target="_blank"  href="https://github.com/lwh2015">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            
+            
+            
+            
+        </ul>
+    </div>
+</section>
+
+        <hr>
+    
+        
+  <h5>RECENT POSTS</h3>
+  <div class="widget">
+    <ul>
+      
+        <li>
+          <a href="article/记一次前端错误监控Sentry平台实践/">记一次前端错误监控Sentry平台实践</a>
+        </li>
+      
+        <li>
+          <a href="article/2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）/">2-1信息系统项目管理基础（项目管理基础、体系构成、IPMP、PMP、PRINCE2、组织结构）</a>
+        </li>
+      
+        <li>
+          <a href="article/vnode-diff算法/">Vnode Diff算法</a>
+        </li>
+      
+        <li>
+          <a href="article/1-8信息化发展与应用、服务管理、系统规划、CIO/">1-8信息化发展与应用、服务管理、系统规划、CIO</a>
+        </li>
+      
+        <li>
+          <a href="article/1-7-信息系统安全技术/">1-7.信息系统安全技术</a>
+        </li>
+      
+    </ul>
+  </div>
+
+        <hr>
+    
+        <!-- Friends Blog -->
+
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+
+    
+</ul>
+
+        <hr>
+    
+        
+    <h5>ARCHIVES</h5>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/05/">May 2019</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+
+        <hr>
+    
+        <!-- Categories -->
+
+        <hr>
+    
+</div>
+
+        
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/lwh2015">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 恒无际涯 2020 
+                    <br>
+                    Theme by <a href="http://beantech.org">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://www.huweihuang.com">胡伟煌</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
